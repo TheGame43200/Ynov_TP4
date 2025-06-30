@@ -27,3 +27,9 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest test_simple_math.py
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: false # Set to true to push to a registry, requires Docker Hub login
+        tags: ynov-tp4-app:latest
